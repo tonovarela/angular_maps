@@ -1,23 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import * as mapboxgl from 'mapbox-gl';
 (mapboxgl as any).accessToken = 'pk.eyJ1Ijoia2xlcml0aCIsImEiOiJja3hramV2OWIwbjEwMzFwYzJlZWl6N2g5In0.iKXPpYvo7UPRiiZ-x_lCrw';
-
 import { MapsRoutingModule } from './maps-routing.module';
-import { MiniMapComponent } from './components/mini-map/mini-map.component';
-import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import { CounterAloneComponent,SideMenuComponent } from '../alone/components';
 import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
-import { FullScreenPageComponent } from './pages/full-screen-page/full-screen-page.component';
-import { MarkersPageComponent } from './pages/markers-page/markers-page.component';
-import { PropertiesPageComponent } from './pages/properties-page/properties-page.component';
-import { ZoomRangePageComponent } from './pages/zoom-range-page/zoom-range-page.component';
+import { FullScreenPageComponent, MarkersPageComponent, PropertiesPageComponent, ZoomRangePageComponent } from './pages';
+import { MiniMapComponent } from './components';
 
 
 @NgModule({
   declarations: [
-    MiniMapComponent,
-    SideMenuComponent,
+    MiniMapComponent,    
     MapsLayoutComponent,
     FullScreenPageComponent,
     MarkersPageComponent,
@@ -25,8 +19,11 @@ import { ZoomRangePageComponent } from './pages/zoom-range-page/zoom-range-page.
     ZoomRangePageComponent
   ],
   imports: [
+    CounterAloneComponent,
     CommonModule,
-    MapsRoutingModule
+    MapsRoutingModule,
+    
+    SideMenuComponent
   ]
 })
 export class MapsModule { }
